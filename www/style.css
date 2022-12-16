@@ -76,3 +76,45 @@ body {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
 }
+
+
+/* Eyeball styles */
+.logo {
+    display: flex;
+    position: relative;
+}
+
+.eyes {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    display: block;
+    background-color: white;
+    margin: 0 20px;
+    border-radius: 50%;
+}
+
+.eyes:nth-child(2) {
+    top: 35%;
+    left: 42%;
+}
+
+.eyes:last-child {
+    top: 35%;
+    right: 53%;
+}
+
+.eyes::before {
+    content: "";
+    top: 50%;
+    left: 35px;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    border: 10px solid skyblue;
+    box-sizing: border-box;
+}
+

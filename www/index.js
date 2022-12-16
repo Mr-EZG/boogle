@@ -32,3 +32,21 @@ async function spoopy_search()
 	await spook();
 	search();
 }
+
+/* Eyeball tracking */
+document.querySelector("body").addEventListener("mousemove", eyeball);
+
+function eyeball() {
+    const eye = document.querySelectorAll(".eyes");
+    eye.forEach(followEye);
+}
+
+function followEye(eye) {
+    console.log(eye);
+    let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+    let y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+
+    let radian = Math.atan2(event.pageX - x, event.pageY - y);
+    let rotate = -1 * radian * (180 / Math.PI) + 270;
+    eye.style.transform = "rotate(" + rotate + "deg)";
+}
